@@ -6,7 +6,11 @@ const metacontrol = require(path.join(__dirname,'metaController'));
 const dnssd = require('dnssd2');
 
 const fs = require('fs');
-const activatedModule = path.join(__dirname,'activated');
+var  activatedModule = path.join(__dirname,'activated');
+if (settings.drivers[0].variables.ActivatedLib)
+    activatedModule = settings.drivers[0].variables.ActivatedLib
+
+
 const BUTTONHIDE = '__';
 const DATASTOREEXTENSION = 'DataStore.json';
 const DEFAULT = 'default'; //NEEO SDK deviceId default value
